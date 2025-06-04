@@ -1,0 +1,44 @@
+syntax = "proto3";
+package user;
+option go_package = "github.com/Arenelin/project-protos/proto/user";
+
+message User {
+  uint32 id    = 1;
+  string email = 2;
+}
+
+message GetUserRequest {
+  uint32 id      = 1;
+}
+
+message ListUsersRequest {}
+message ListUsersResponse {
+  repeated User users = 1;
+}
+
+message CreateUserRequest {
+  string email = 1;
+}
+message CreateUserResponse {
+  User user = 1;
+}
+
+message UpdateUserRequest {
+  User user = 1;
+}
+message UpdateUserResponse {
+  User user = 1;
+}
+
+message DeleteUserRequest {
+  uint32 id    = 1;
+}
+message DeleteUserResponse {}
+
+service UserService {
+  rpc GetUser    (GetUserRequest)              returns (User);
+  rpc ListUsers (ListUsersRequest) returns (ListUsersResponse);
+  rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
+}
