@@ -1,6 +1,6 @@
 syntax = "proto3";
 package user;
-option go_package = "github.com/Arenelin/project-protos/proto/user";
+option go_package = "github.com/Arenelin/project-prot/proto/user";
 
 message User {
   uint32 id    = 1;
