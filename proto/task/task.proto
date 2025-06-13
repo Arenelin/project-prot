@@ -17,6 +17,13 @@ message ListTasksResponse {
   repeated Task tasks = 1;
 }
 
+message ListTasksByUserRequest {
+  uint32 id      = 1;
+}
+message ListTasksByUserResponse {
+  repeated Task tasks = 1;
+}
+
 message CreateTaskRequest {
   string title = 1;
 }
@@ -39,6 +46,7 @@ message DeleteTaskResponse {}
 service TaskService {
   rpc GetTask    (GetTaskRequest)             returns (Task);
   rpc ListTasks    (ListTasksRequest)             returns (ListTasksResponse);
+  rpc ListTasksByUser    (ListTasksByUserRequest)             returns (ListTasksByUserResponse);
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
