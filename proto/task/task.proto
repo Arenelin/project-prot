@@ -6,7 +6,7 @@ message Task {
   uint32 id      = 1;
   string title   = 2;
   uint32 userId   = 3;
-  bool   isDone   = 4;
+  optional bool   isDone   = 4;
 }
 
 message GetTaskRequest {
