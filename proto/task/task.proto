@@ -26,6 +26,7 @@ message ListTasksByUserResponse {
 
 message CreateTaskRequest {
   string title = 1;
+  uint32 userId = 2;
 }
 message CreateTaskResponse {
   Task task = 1;
